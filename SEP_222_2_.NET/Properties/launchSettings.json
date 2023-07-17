@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "SEP_222_2_.NET": {
+      "commandName": "Project",
+      "commandLineArgs": "1 2 3"
+    }
+  }
+}
