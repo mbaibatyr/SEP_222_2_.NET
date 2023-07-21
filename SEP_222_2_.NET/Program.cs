@@ -1,5 +1,7 @@
-﻿namespace SEP_222_2_.NET
-{
+﻿using SEP_222_2_.NET.Model;
+
+namespace SEP_222_2_.NET
+{   
     class Student
     {
         public string? lastName { get; set; }
@@ -7,6 +9,8 @@
     }
     public class Program
     {
+
+        #region методы
         static int byDefault(int x, int y, int z = 0)
         {
             if (z == 0)
@@ -42,16 +46,29 @@
             return 0;
         }
 
+
         static int byArrParams(params int[] arr)
         {
             return 0;
         }
+        #endregion
         static void Main(string[] args)
         {
-            var res = byDefault(10, 20);
-            Console.WriteLine(res);
-            res = byDefault(10, 20, 30);
-            Console.WriteLine(res);
+
+            Animal animal = new Animal();
+            animal.Name = "DOG";
+            Console.WriteLine(animal.Name);
+            foreach (var item in animal.Months)
+            {
+                Console.WriteLine($"{item.Id} \t {item.Name}");
+            } 
+            
+
+            #region архив
+            //var res = byDefault(10, 20);
+            //Console.WriteLine(res);
+            //res = byDefault(10, 20, 30);
+            //Console.WriteLine(res);
 
             //int x = 10, y = 20, z;
             //byOut(x, y, out z);
@@ -63,7 +80,6 @@
 
             //int res = byValue(x, y);
             //Console.WriteLine($"res={res} x={x}, y={y}");
-            #region архив
 
             //Student student = new Student()
             //{
