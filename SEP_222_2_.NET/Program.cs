@@ -1,7 +1,7 @@
 ﻿using SEP_222_2_.NET.Model;
 
 namespace SEP_222_2_.NET
-{   
+{
     class Student
     {
         public string? lastName { get; set; }
@@ -54,17 +54,75 @@ namespace SEP_222_2_.NET
         #endregion
         static void Main(string[] args)
         {
-
-            Animal animal = new Animal();
-            animal.Name = "DOG";
-            Console.WriteLine(animal.Name);
-            foreach (var item in animal.Months)
+            try
             {
-                Console.WriteLine($"{item.Id} \t {item.Name}");
-            } 
-            
+                string sNum = "123фвфыв";
+                int res = 0;
+                if(int.TryParse(sNum, out res))
+                    Console.WriteLine(res);
+                else
+                    Console.WriteLine("Не число");
+                //int k = 0;
+                //if (k == 0)
+                //    throw new Exception("нельзя делить на ноль",new DivideByZeroException() );
+                //var res = 10 / k;
+
+                //return;
+
+                //string[] arr = new string[2];
+                //arr[2] = "";
+                //Student student = null;
+                //student.firstName = "";
+
+                //Convert.ToInt32("asdasd");
+                //for (int i = 2000000000; i < 222222222222222; i++)
+                //{
+                //    ;
+                //}
+            }
+
+
+
+            catch (Exception err)
+            {
+                Console.WriteLine(err.Message);
+                try
+                {
+                    //insert
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+            finally
+            {
+                Console.WriteLine("Выполнится в любом случае");
+                try
+                {
+
+                }
+                catch (Exception)
+                {
+
+                    throw;
+                }
+            }
+
+
 
             #region архив
+            //Animal animal = new Animal("CAT");
+            //animal.Name = "DOG";
+            //Console.WriteLine(animal.Name);
+            //foreach (var item in animal.Months)
+            //{
+            //    Console.WriteLine($"{item.Id} \t {item.Name}");
+            //} 
+
+
+
             //var res = byDefault(10, 20);
             //Console.WriteLine(res);
             //res = byDefault(10, 20, 30);

@@ -39,9 +39,9 @@ namespace SEP_222_2_.NET.Model
 
         }
 
-        public Animal()
+        public Animal(string name)
         {
-
+            this.Name = name;
         }
     }
 }
