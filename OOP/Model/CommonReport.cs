@@ -8,7 +8,7 @@ using ClosedXML.Excel;
 
 namespace OOP.Model
 {
-    public class CommonReport
+    public abstract class CommonReport
     {
         protected List<ReportData> Data { get; set; }
         protected string Path { get; set; }
@@ -18,10 +18,12 @@ namespace OOP.Model
             Data = data;
         }
 
-        public virtual void Export()
-        {
-            Console.WriteLine(this.ToString());
-        }
+        //public virtual void Export()
+        //{
+        //    Console.WriteLine(this.ToString());
+        //}
+
+        public abstract void Export();
 
         protected void Run()
         {
@@ -58,6 +60,17 @@ namespace OOP.Model
         }
     }
 
+    //class CSV2 : CommonReport
+    //{
+    //    public CSV2(List<ReportData> data, string path)
+    //        : base(data, path)
+    //    {
+    //    }
+    //    public override void Export()
+    //    {
+    //        base.Export();
+    //    }
+    //}
 
     class Excel : CommonReport
     {
@@ -66,7 +79,7 @@ namespace OOP.Model
         {
             Data.Add(new ReportData { Id = 4, Name = "Shymkent" });
         }
-        public override void Export()
+        sealed public override void Export()
         {
             Console.WriteLine(this.ToString());
             using (XLWorkbook wb = new XLWorkbook())
@@ -81,6 +94,7 @@ namespace OOP.Model
         }
     }
 
+   
 
     class Html : CommonReport
     {

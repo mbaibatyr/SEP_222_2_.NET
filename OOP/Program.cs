@@ -25,15 +25,59 @@ namespace OOP
                 new ReportData() {Id=3, Name="Aktobe" }
             };
 
+            //t = new T(data, @"C:\Temp\123.csv");
             //CSV csv = new CSV(data, @"C:\Temp\123.csv");
             //csv.Export();
 
             //Excel excel = new Excel(data, @"C:\Temp\123.xlsx");
             //excel.Export();
 
-            Html html = new Html(data, @"C:\Temp\123.html");
-            html.Export();
+            //Html html = new Html(data, @"C:\Temp\123.html");
+            //html.Export();
 
+
+            //MyExport<CSV> csv = new MyExport<CSV>
+            //    (
+            //        new CSV(data, @"C:\Temp\123.csv")
+            //    );
+
+            MyExport<Excel> excel = new MyExport<Excel>
+                (
+                    new Excel(data, @"C:\Temp\123.xlsx")
+                );
+
+            //Magnum<int> magnum = new Magnum<int>("Батон", 250, "123456");
+            //magnum.Sell();
+
+            //Magnum<float> magnum2 = new Magnum<float>("СНикерс", 300.15f, "89898989");
+            //magnum2.Sell();
+
+            //Magnum<string> magnum3 = new Magnum<string>("Аппорт", "закончились, цена = 0", "3213232");
+            //magnum3.Sell();
+
+            #region  OOP
+            //List<ReportData> data = new List<ReportData>()
+            //{
+            //    new ReportData() {Id=1, Name="Almaty" },
+            //    new ReportData() {Id=2, Name="Astana" },
+            //    new ReportData() {Id=3, Name="Aktobe" }
+            //};
+
+            //CSV csv = new CSV(data, @"C:\Temp\123.csv");
+            //csv.Export();
+
+            //Excel excel = new Excel(data, @"C:\Temp\123.xlsx");
+            //excel.Export();
+
+            //Html html = new Html(data, @"C:\Temp\123.html");
+            //html.Export();
+
+            //CommonReport report = new CommonReport(data, @"C:\Temp\123.csv");
+            //report.Export();
+
+            //CSV2 cSV2 = new CSV2(data, @"C:\Temp\123.csv");
+            //cSV2.Export();
+            #endregion
         }
     }
 }
