@@ -18,12 +18,51 @@ namespace OOP
         }
         static void Main(string[] args)
         {
-            List<ReportData> data = new List<ReportData>()
+
+            Data data = new Data();
+            Data data2 = null;
+            //List<Data> lst = new List<Data>();
+            //lst.Add(new Data { id = 1 });
+            //lst.Add(new Data { id = 2 });
+
+            Employees employees = new Employees();
+            List <object> lst = new List<object>()
             {
-                new ReportData() {Id=1, Name="Almaty" },
-                new ReportData() {Id=2, Name="Astana" },
-                new ReportData() {Id=3, Name="Aktobe" }
+                new Data { id = 1 },
+                new Data { id = 2 },
+                data,
+                data2,
+                employees
             };
+
+            foreach (var item in lst)
+            {
+                if(item is Data)
+                {
+                    var id = (item as Data).id;                   
+
+                }
+            }
+
+            //MyGeneric myGeneric = new MyGeneric();
+            //myGeneric.getArrayInt(1,2,3,4,5);
+
+
+            //MyGeneric2<int> myGeneric2 = new MyGeneric2<int>();
+            //var array = new int[] { 1, 2, 3, 4, 5 };
+            //myGeneric2.getArray(34,45,56);
+
+            //MyGeneric2<Data> myGeneric3 = new MyGeneric2<Data>();
+            //Data data1 = new Data();
+            //Data data2 = new Data();
+            //myGeneric3.getArray(data1, data2);
+
+            //List<ReportData> data = new List<ReportData>()
+            //{
+            //    new ReportData() {Id=1, Name="Almaty" },
+            //    new ReportData() {Id=2, Name="Astana" },
+            //    new ReportData() {Id=3, Name="Aktobe" }
+            //};
 
             //t = new T(data, @"C:\Temp\123.csv");
             //CSV csv = new CSV(data, @"C:\Temp\123.csv");
@@ -41,10 +80,10 @@ namespace OOP
             //        new CSV(data, @"C:\Temp\123.csv")
             //    );
 
-            MyExport<Excel> excel = new MyExport<Excel>
-                (
-                    new Excel(data, @"C:\Temp\123.xlsx")
-                );
+            //MyExport<Excel> excel = new MyExport<Excel>
+            //    (
+            //        new Excel(data, @"C:\Temp\123.xlsx")
+            //    );
 
             //Magnum<int> magnum = new Magnum<int>("Батон", 250, "123456");
             //magnum.Sell();

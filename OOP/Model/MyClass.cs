@@ -27,5 +27,5 @@ namespace OOP.Model
         public string profile_image { get; set; }
     }
 
-
+   
 }
