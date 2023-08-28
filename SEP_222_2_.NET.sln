@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LogConfig", "LogConfig\LogC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "OOP", "OOP\OOP.csproj", "{728AB36C-6729-4091-A7F9-FFE56D498F50}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyInterface", "MyInterface\MyInterface.csproj", "{1EB33F54-11E8-4A2D-BBA8-02E1470E5707}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyInterface", "MyInterface\MyInterface.csproj", "{1EB33F54-11E8-4A2D-BBA8-02E1470E5707}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyString", "MyString\MyString.csproj", "{2D391BCD-CE0A-4F28-BD41-17055363B77F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{1EB33F54-11E8-4A2D-BBA8-02E1470E5707}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{1EB33F54-11E8-4A2D-BBA8-02E1470E5707}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{1EB33F54-11E8-4A2D-BBA8-02E1470E5707}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D391BCD-CE0A-4F28-BD41-17055363B77F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D391BCD-CE0A-4F28-BD41-17055363B77F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D391BCD-CE0A-4F28-BD41-17055363B77F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D391BCD-CE0A-4F28-BD41-17055363B77F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

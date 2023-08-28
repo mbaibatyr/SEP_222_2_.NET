@@ -1,4 +1,6 @@
-﻿namespace MyInterface
+﻿using System.Text.RegularExpressions;
+
+namespace MyInterface
 {
     class NonProgram
     {
@@ -9,13 +11,15 @@
             //File.AppendAllText(@"C:\Temp\123.csv", "test test");
             //string content = File.ReadAllText(@"C:\Temp\123.csv");
             //Console.WriteLine(content);
-
-            string[] lines = File.ReadAllLines(@"C:\Temp\123.csv");
-            foreach (var item in lines)
-            {
-                if (item.Contains("test"))
-                    Console.WriteLine(item);
-            }
+            //File.WriteAllText();
+            //string[] lines = File.ReadAllLines(@"C:\Temp\123.csv");
+            //foreach (var item in lines)
+            //{
+            //    if (item.Contains("test"))
+            //        Console.WriteLine(item);
+            //}
+            
+            
         }
     }
 }
