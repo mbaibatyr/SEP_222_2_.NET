@@ -8,11 +8,10 @@ namespace MyString
         static void Main(string[] args)
         {
             //Console.WriteLine("Hello, World!");
-            DemoString demo = new DemoString();
+            //DemoString demo = new DemoString();
             //Console.WriteLine(demo.S3(""));
-            //demo.S4("");
-            demo.DateTest();
-
+            //demo.S4("");  
+            string st = null;            
         }
 
 
