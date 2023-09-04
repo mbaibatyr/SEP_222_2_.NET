@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Dapper;
 
 namespace MyLinq
 {
@@ -118,6 +120,38 @@ namespace MyLinq
                 lb_2.Items.Add($"{item.name}");
             }
 
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            using (SqlConnection db = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\байбатыровм\Documents\testDB.mdf;Integrated Security=True;Connect Timeout=30"))
+            {
+                //IEnumerable<City> lst = db.Query<City>("select id, name from city");
+                var lst = db.Query<City>("select id, name from city");
+
+                var lst2 = from z in lst
+                           where z.id % 2 != 0
+                           select z.name;
+                lb_2.Items.AddRange(lst2.ToArray());
+
+
+                //// 1 вариант
+                //var lst2 = from z in lst
+                //           select z.name;
+                //lb_2.Items.AddRange(lst2.ToArray());
+
+                //// 2 вариант
+                //lb_2.Items.AddRange(lst.Select(z=>z.name).ToArray());
+
+                //// 3 вариант
+                //foreach (var item in lst)
+                //{
+                //    lb_2.Items.Add(item.name);
+                //}
+
+
+
+            }
         }
     }
 
