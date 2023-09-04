@@ -85,7 +85,7 @@ namespace MyLinq
                 new City{id=3, name="Astana"}
             };
 
-            //var result_1 = lst.Where(z => z.id == 4).FirstOrDefault();
+            var result_1 = lst.Where(z => z.id == 4).FirstOrDefault();
             //if (result_1 != null)
             //    lb_2.Items.Add($"{result_1.id} - {result_1.name}");
             //else
