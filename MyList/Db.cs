@@ -31,4 +31,10 @@ namespace MyList
         public string name { get; set; }
     }
 
+    internal class Data3
+    {
+        public int? id { get; set; }
+        public string name { get; set; }
+    }
+
 }
