@@ -54,6 +54,22 @@ namespace SEP_222_2_.NET
         #endregion
         static void Main(string[] args)
         {
+
+            Dictionary<int, string> people = new Dictionary<int, string>();
+            for (int i = 0; i < 10; i++)
+            {
+                people.Add(i, i.ToString() + "qqq");
+            }
+
+            foreach (var item in people)
+            {                
+                Console.WriteLine($"{item.Key} {item.Value} ");
+            }
+
+            var res2 = people.ContainsKey(5);
+
+
+            return;
             try
             {
                 string sNum = "123фвфыв";
