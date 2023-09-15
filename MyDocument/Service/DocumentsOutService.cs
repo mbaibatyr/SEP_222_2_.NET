@@ -15,7 +15,25 @@ namespace MyDocument.Service
     {
         public Status DocumentsOutAdd(DocumentsOut document)
         {
-            throw new NotImplementedException();
+            using (SqlConnection db = new SqlConnection(ConfigurationManager.AppSettings["db"]))
+            {
+                try
+                {
+                    string sql = $@"insert into DocumentsOut 
+                                (NameDocument, InitiatePerson, Notes, ScanFileName)
+                                values (N'{document.NameDocument}',
+                                        N'{document.InitiatePerson}',
+                                        N'{document.Notes}',
+                                        N'{document.ScanFileName}')";
+
+                    db.Execute(sql);
+                    return Status.OK;
+                }
+                catch
+                {
+                    return Status.ERROR;
+                }
+            }
         }
         public IEnumerable<DocumentsOut> getDocumentsOut(DateTime dtBegin, DateTime dtEnd)
         {
