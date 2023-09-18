@@ -11,5 +11,8 @@ namespace MyDocument.Abstract
     {
         IEnumerable<T> getDocumentsOut(DateTime dtBegin, DateTime dtEnd);
         Status DocumentsOutAdd(T document);
+        T getDocumentsOutById(string id);
+        Status DocumentsOutEdit(T document);
+        Status DocumentsOutDelete(string id);
     }
 }
