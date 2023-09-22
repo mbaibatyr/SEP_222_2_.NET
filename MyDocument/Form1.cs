@@ -1,15 +1,12 @@
-﻿using MyDocument.Model;
+﻿using ClosedXML.Excel;
+using MyDocument.Model;
 using MyDocument.Service;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Configuration;
-using System.Data;
-using System.Drawing;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace MyDocument
@@ -128,6 +125,52 @@ namespace MyDocument
             }
             else
                 MessageBox.Show("При удалении Документа произошла ошибка", "Инфо", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(cbReportType.SelectedIndex == -1)
+            {
+                MessageBox.Show("Не выбран тип отчета");
+                cbReportType.Focus();
+                return;
+            }
+            Cursor.Current = Cursors.WaitCursor;
+            var data = service.getDocumentsOut(tpBegin.Value, tpEnd.Value);
+            if (data.Count() == 0)
+            {
+                MessageBox.Show("Данных нет");
+                Cursor.Current = Cursors.Default;
+                return;
+            }
+
+            if (cbReportType.SelectedIndex == 0)
+            {                
+                var wb = new XLWorkbook();
+                var ws = wb.Worksheets.Add("Report");
+                ws.Cell(1, 1).InsertTable(data);
+                ws.Columns(1, 10).AdjustToContents();
+                wb.SaveAs(@"C:\Temp\report.xlsx");
+                MessageBox.Show("done");
+                Process.Start(@"C:\Temp\report.xlsx");
+            }
+            else
+            {
+                StringBuilder sb = new StringBuilder();
+                sb.AppendLine("Id;NameDocument;DateDocument;InitiatePerson;Notes;ScanFileName");
+                foreach (var item in data)
+                {
+                    sb.AppendLine($"{item.Id};{item.NameDocument};{item.DateDocument};{item.InitiatePerson};{item.Notes};{item.ScanFileName}");
+                }
+                File.WriteAllText(@"C:\Temp\report.csv", sb.ToString(), Encoding.UTF8);
+                Process.Start(@"C:\Temp\report.csv");
+            }
+            Cursor.Current = Cursors.Default;
+        }
+
+        private void fmDocument_Load(object sender, EventArgs e)
+        {
+            cbReportType.SelectedIndex = 0;
         }
     }
 }

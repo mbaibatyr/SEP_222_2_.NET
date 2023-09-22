@@ -30,6 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btDelete = new System.Windows.Forms.Button();
+            this.btEdit = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.tbScanFileName = new System.Windows.Forms.TextBox();
@@ -40,6 +42,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.tbNameDocument = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cbReportType = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.btSearch = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -47,12 +51,8 @@
             this.tpBegin = new System.Windows.Forms.DateTimePicker();
             this.gvDocuments = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            this.btEdit = new System.Windows.Forms.Button();
-            this.btDelete = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
             this.pbScanDocument = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.cbReportType = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -90,6 +90,26 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(637, 176);
             this.panel3.TabIndex = 1;
+            // 
+            // btDelete
+            // 
+            this.btDelete.Location = new System.Drawing.Point(537, 90);
+            this.btDelete.Name = "btDelete";
+            this.btDelete.Size = new System.Drawing.Size(75, 23);
+            this.btDelete.TabIndex = 10;
+            this.btDelete.Text = "Удалить";
+            this.btDelete.UseVisualStyleBackColor = true;
+            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
+            // 
+            // btEdit
+            // 
+            this.btEdit.Location = new System.Drawing.Point(537, 52);
+            this.btEdit.Name = "btEdit";
+            this.btEdit.Size = new System.Drawing.Size(75, 23);
+            this.btEdit.TabIndex = 9;
+            this.btEdit.Text = "Изменить";
+            this.btEdit.UseVisualStyleBackColor = true;
+            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
             // 
             // btAdd
             // 
@@ -181,6 +201,28 @@
             this.panel2.Size = new System.Drawing.Size(465, 176);
             this.panel2.TabIndex = 0;
             // 
+            // cbReportType
+            // 
+            this.cbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbReportType.FormattingEnabled = true;
+            this.cbReportType.Items.AddRange(new object[] {
+            "Excel",
+            "CSV"});
+            this.cbReportType.Location = new System.Drawing.Point(149, 122);
+            this.cbReportType.Name = "cbReportType";
+            this.cbReportType.Size = new System.Drawing.Size(109, 21);
+            this.cbReportType.TabIndex = 6;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(288, 122);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.TabIndex = 5;
+            this.button1.Text = "Отчет";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // btSearch
             // 
             this.btSearch.Location = new System.Drawing.Point(288, 30);
@@ -243,26 +285,6 @@
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
             // 
-            // btEdit
-            // 
-            this.btEdit.Location = new System.Drawing.Point(537, 52);
-            this.btEdit.Name = "btEdit";
-            this.btEdit.Size = new System.Drawing.Size(75, 23);
-            this.btEdit.TabIndex = 9;
-            this.btEdit.Text = "Изменить";
-            this.btEdit.UseVisualStyleBackColor = true;
-            this.btEdit.Click += new System.EventHandler(this.btEdit_Click);
-            // 
-            // btDelete
-            // 
-            this.btDelete.Location = new System.Drawing.Point(537, 90);
-            this.btDelete.Name = "btDelete";
-            this.btDelete.Size = new System.Drawing.Size(75, 23);
-            this.btDelete.TabIndex = 10;
-            this.btDelete.Text = "Удалить";
-            this.btDelete.UseVisualStyleBackColor = true;
-            this.btDelete.Click += new System.EventHandler(this.btDelete_Click);
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.pbScanDocument);
@@ -283,27 +305,6 @@
             this.pbScanDocument.TabIndex = 2;
             this.pbScanDocument.TabStop = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(288, 122);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Отчет";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // cbReportType
-            // 
-            this.cbReportType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbReportType.FormattingEnabled = true;
-            this.cbReportType.Items.AddRange(new object[] {
-            "Excel",
-            "CSV"});
-            this.cbReportType.Location = new System.Drawing.Point(149, 122);
-            this.cbReportType.Name = "cbReportType";
-            this.cbReportType.Size = new System.Drawing.Size(109, 21);
-            this.cbReportType.TabIndex = 6;
-            // 
             // fmDocument
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -314,6 +315,7 @@
             this.Name = "fmDocument";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Исходящие";
+            this.Load += new System.EventHandler(this.fmDocument_Load);
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
