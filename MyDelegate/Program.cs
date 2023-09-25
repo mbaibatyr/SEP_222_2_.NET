@@ -3,9 +3,7 @@
 namespace MyDelegate
 {
     internal class Program
-    {
-
-        
+    {     
         static void Main(string[] args)
         {
             Deleg deleg = new Deleg();
