@@ -6,19 +6,29 @@ namespace MyTuple
     {
         static void Main(string[] args)
         {
+            if(args.Length == 0)
+            {
+                Console.WriteLine("args are not found");
+                return;
+            }
+            foreach (string item in args)
+            {
+                Console.WriteLine(item);
+            }
+
+            return;
+            #region tuple  
+
             using (MyDisposeTest myDisposeTest = new MyDisposeTest())
             {
                 Console.WriteLine("MyDisposeTest was created");
-                myDisposeTest.Dispose
             }
-
-            #region tuple  
             //MyDispose myDispose = new MyDispose();
             //myDispose.ReadFile();
             //CallMyLib.Start();
             //pointer.Start();
 
-            //MyTuple2 myTuple2 = new MyTuple2();
+            MyTuple2 myTuple2 = new MyTuple2();
             //var res_1 = myTuple2.getName();
             //Console.WriteLine($"{res_1[0]} {res_1[1]} {res_1[2]} ");
             //var res_2 = myTuple2.getName_2();
@@ -66,9 +76,11 @@ namespace MyTuple
 
         public Tuple<string, string, string> getName_5()
         {
+            var result2 = (array[0], array[1], array[2]);
+
             Tuple<string, string, string> result =
                 new Tuple<string, string, string>(array[0], array[1], array[2]);
-            return result;
+            return result2.ToTuple();
         }
 
         public Tuple<string, string, string> getName_6(Tuple<string, string, string> param)

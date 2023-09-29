@@ -1,0 +1,8 @@
+{
+  "profiles": {
+    "MyTuple": {
+      "commandName": "Project",
+      "commandLineArgs": "123\r\n456\r\n789"
+    }
+  }
+}
